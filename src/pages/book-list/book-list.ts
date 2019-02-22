@@ -2,7 +2,8 @@ import { BookDetailPage } from './../book-detail/book-detail';
 import { Book } from './../../models/book.model';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { BookiRestProvider } from '../../providers/booki-rest/booki-rest';
+import { BookRestProvider } from '../../providers/booki-rest/booki-rest';
+
 
 /**
  * Generated class for the BookListPage page.
@@ -19,7 +20,7 @@ export class BookListPage {
 
   category :string;
 books:Book;
-  constructor(public bookRest:BookiRestProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public bookRest:BookRestProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
 
@@ -27,7 +28,7 @@ books:Book;
     console.log('ionViewWillEnter');
     this.category=this.navParams.get("category");
     console.log(this.category);
-    this.bookRest.getBookList().subscribe( data =>{
+    this.bookRest.getbooklist().subscribe( data =>{
       this.books=data.filter(book=>book.category===this.category);
     }
       

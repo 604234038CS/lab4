@@ -11,9 +11,9 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { BookiRestProvider } from '../providers/booki-rest/booki-rest';
 import { HttpClientModule } from '@angular/common/http';
+import { BookRestProvider } from '../providers/booki-rest/booki-rest';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BookiRestProvider
+    BookRestProvider
   ]
 })
 export class AppModule {}
